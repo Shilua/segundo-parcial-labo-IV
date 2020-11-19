@@ -3,7 +3,25 @@
       <div class="card text-center">
         <input [(ngModel)]="user.email" placeholder="ingrese Email" type="email" class="form-control"/>
         <input [(ngModel)]="user.pass" placeholder="ingrese clave" type="password" class="form-control"/>
-        <button class="btn btn-outline-danger" (click)="onLogin()">Conectarse</button>
+        <button class="btn btn-success" (click)="onLogin()">Conectarse</button>
+      </div>
+    </div> 
+  </div>
+<br/>
+  <div class="row">
+    <div class="col-4">
+      <div class="card text-center">
+        <button class="btn btn-outline-success" (click)="cargarAdministrador()">cargar Administrador</button>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="card text-center">
+        <button class="btn btn-outline-success" (click)="cargarAlumno()">cargar Administrador</button>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="card text-center">
+        <button class="btn btn-outline-success" (click)="cargarProfesor()">cargar Administrador</button>
       </div>
     </div>
   </div>

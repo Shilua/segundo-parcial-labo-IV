@@ -34,4 +34,16 @@ export class LoginComponent implements OnInit {
         });
       }
 
+      cargarAlumno(){
+        this.user.email = 'alumno@alumno.com';
+        this.user.pass = 'alumno'
+      }
+      cargarAdministrador(){
+        this.user.email = 'admin@admin.com';
+        this.user.pass = 'administrador'
+      }
+      cargarProfesor(){
+        this.user.email = 'profesor@profesor.com';
+        this.user.pass = 'profesor'
+      }
 }
