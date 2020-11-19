@@ -1,0 +1,18 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>nombre</th>
+            <th>cuatrimestre</th>
+            <th>cupos</th>
+            <th>profesor</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let materia of materias">
+            <td>{{materia.nombre}}</td>
+            <td>{{materia.cuatrimestre}}</td>
+            <td>{{materia.cupos}}</td>
+            <td>{{materia.profesor}}</td>
+        </tr>
+    </tbody>
+</table>

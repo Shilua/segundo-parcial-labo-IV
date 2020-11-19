@@ -1,0 +1,9 @@
+<div class="row justify-content-center" style="padding-top: 250px;">
+    <div class="col-4 align-self-center">
+      <div class="card text-center">
+        <input [(ngModel)]="user.email" placeholder="ingrese Email" type="email" class="form-control"/>
+        <input [(ngModel)]="user.pass" placeholder="ingrese clave" type="password" class="form-control"/>
+        <button class="btn btn-outline-danger" (click)="onLogin()">Conectarse</button>
+      </div>
+    </div>
+  </div>

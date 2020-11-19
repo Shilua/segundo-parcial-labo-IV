@@ -1,0 +1,37 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <app-listado-materia [materias]='materias'></app-listado-materia>
+        </div>
+        <div class="col-md-4">
+            <div *ngIf="materia.profesor == null">
+                <h2>Seleccionar Profesor</h2>
+                <button class="btn btn-success" *ngFor="let profesor of profesores" (click)="seleccionarProfesor(profesor)" >
+                    {{profesor.nombre}} {{profesor.apellido}}
+                </button>
+            </div>
+            <div *ngIf="materia.profesor != null">
+                <h2>Cargar Materia</h2>
+                <div>
+                    <label>Nombre:</label>
+                    <input class="form-control" [(ngModel)]="materia.nombre">
+                </div>
+                <div>
+                    <label>cuatrimestre:</label>
+                    <input class="form-control" [(ngModel)]="materia.cuatrimestre">
+                </div>
+                <div>
+                    <label>cupos:</label>
+                    <input class="form-control" [(ngModel)]="materia.cupos">
+                </div>
+                <div>
+                    <label>Nombre:</label>
+                    <input class="form-control" [(ngModel)]="materia.profesor" disabled>
+                </div>
+                <button class="btn btn-success" type="submit" (click)="cargarMateria()">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
