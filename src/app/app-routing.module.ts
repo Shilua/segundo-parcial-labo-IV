@@ -7,13 +7,17 @@ import { AppComponent } from './app.component';
 import { AdministradorComponent } from './components/administrador/administrador.component';
 import { ListadoMateriaComponent } from './components/listado-materia/listado-materia.component';
 import { AlumnoComponent } from './components/alumno/alumno.component';
+import { RegisterComponent } from './components/register/register.component';
+import { ProfesorComponent } from './components/profesor/profesor.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'principal', component: AppComponent, canActivate: [CheckLoginGuard] },
   { path: 'administrador', component: AdministradorComponent, canActivate: [CheckLoginGuard]},
   { path: 'materias', component: ListadoMateriaComponent },
-  { path: 'alumno', component: AlumnoComponent, canActivate: [CheckLoginGuard]}
+  { path: 'alumno', component: AlumnoComponent, canActivate: [CheckLoginGuard]},
+  { path: 'registro', component: RegisterComponent },
+  { path: 'profesor', component: ProfesorComponent }
 ];
 
 

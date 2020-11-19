@@ -42,7 +42,7 @@ export class UserService {
     });
   }
 
-  createElement(user: User){
+    createElement(user: User){
     this.firestore.collection('users').add(user);
   }
 

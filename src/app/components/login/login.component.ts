@@ -29,6 +29,9 @@ export class LoginComponent implements OnInit {
             this.router.navigate(['/administrador']);
           }else if(this.user.userType == 'alumno'){
             this.router.navigate(['/alumno']);}
+            else {
+              this.router.navigate(['/profesor']);
+            }
           });
         });     
         });

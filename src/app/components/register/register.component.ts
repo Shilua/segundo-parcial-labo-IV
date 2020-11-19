@@ -11,7 +11,7 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  user: User;
+  user: User = new User();
   constructor(
     private authSvc:AuthService,
     private fireAuth:AngularFireAuth, 
@@ -29,15 +29,18 @@ export class RegisterComponent implements OnInit {
           email: this.user.email,
           pass: 'no hace falta',
           userType: this.user.userType,
-          nombre: this.user.nombre,
-          apellido: this.user.apellido,
+          nombre: '',
+          apellido: '',
           isActive: true
         }
       );
       if (this.user.userType == 'administrador') {
         this.router.navigate(['/administrador']);
       }else if(this.user.userType == 'alumno'){
-        this.router.navigate(['/alumno']);}
+        this.router.navigate(['/alumno']);
+      } else {
+        this.router.navigate(['/profesor']);
+      }
     });
   }
   login(){}
