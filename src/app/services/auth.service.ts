@@ -24,7 +24,7 @@ export class AuthService {
     try {
       return await this.afAuth.createUserWithEmailAndPassword(user.email, user.pass);
     } catch (error) {
-      console.log('error', error);
+      throw error;
     }
   }
 

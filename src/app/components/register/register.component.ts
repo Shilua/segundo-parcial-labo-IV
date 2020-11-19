@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { User } from 'src/app/classes/user';
 import { AuthService } from 'src/app/services/auth.service';
 import { UserService } from 'src/app/services/user.service';
@@ -16,7 +17,8 @@ export class RegisterComponent implements OnInit {
     private authSvc:AuthService,
     private fireAuth:AngularFireAuth, 
     private userSvc:UserService,
-    private router: Router
+    private router: Router,
+    public toastr: ToastrService
   ) { }
 
   ngOnInit(): void {
@@ -40,6 +42,24 @@ export class RegisterComponent implements OnInit {
         this.router.navigate(['/alumno']);
       } else {
         this.router.navigate(['/profesor']);
+      }
+    }, (error: any)=>{
+      switch (error.code) {
+        case "auth/weak-password":
+          this.toastr.error("contrasena muy corta,minimo 6 caracteres");
+          break;
+        case "auth/invalid-email":
+          this.toastr.error("mail invalido");
+          break;
+        case "auth/wrong-password":
+          this.toastr.error("contrasenia invalida");
+          break;
+        case "auth/email-already-in-use":
+          this.toastr.error("El correo ya se encuentra tomado");
+          break;
+        default:
+          this.toastr.error("ERROR");
+          break;
       }
     });
   }

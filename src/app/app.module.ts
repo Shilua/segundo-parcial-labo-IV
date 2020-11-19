@@ -19,6 +19,8 @@ import { AlumnoComponent } from './components/alumno/alumno.component';
 import { EstadoAprobacionPipe } from './estado-aprobacion.pipe';
 import { ProfesorComponent } from './components/profesor/profesor.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     AngularFirestoreModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
